@@ -77,18 +77,21 @@ for (let i = 0; i < 5; i++) {
 As you reach more advanced levels, exploring advanced JavaScript concepts enables you to write more efficient and maintainable code:
 
 1. Closures:
-Closures are functions that remember the environment in which they were created. This is helpful to implement private variables:
+In JavaScript, a closure is created when an inner function has access to the variables of its outer (enclosing) function, even after the outer function has finished executing.
 
 ```js
-function makeCounter() {
-  let count = 0;
-  return function() {
-    return count++;
+function outerFunction() {
+  var outerVariable = 'I am from the outer function';
+
+  function innerFunction() {
+    console.log(outerVariable); // Accessing outerVariable from the inner function
   }
+
+  return innerFunction; 
 }
-const counter = makeCounter();
-console.log(counter()); // 0
-console.log(counter()); // 1
+
+var closure = outerFunction(); // outerFunction is called, and it returns innerFunction
+closure(); // Calling the inner function, which still has access to outerVariable
 ```
 2. Promises and Asynchronous Functions
 Asynchronous operations are managed fluently using the Promises and async/await syntax:
