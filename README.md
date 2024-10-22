@@ -30,7 +30,7 @@ For the newcomer, learning JavaScript, first of all, involves the basic concepts
 ### Declaring Variables
 You can declare variables in JavaScript using var, let, and const, each for different purposes:
 
-```ja
+```js
 var name = 'John'; // Function-scoped
 let age = 25;      // Block-scoped
 const pi = 3.14;   // Block-scoped, immutable
@@ -44,3 +44,31 @@ It supports a range of the data types below:
 
 ### Functions
 Functions in JavaScript are first-class citizens, which means you can store them in variables, pass them as arguments, and return them from other functions:
+
+```js
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+```
+Control Structures
+Understanding control structures (conditional statements and loops) is essential for building logic in your applications:
+
+## Conditionals
+
+```js
+if (score > 90) {
+  console.log('Excellent!');
+} else if (score > 75) {
+  console.log('Good job!');
+} else {
+  console.log('Keep trying!');
+}
+```
+
+## Loops
+
+```js
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+```
