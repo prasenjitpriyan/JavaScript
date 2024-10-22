@@ -3,7 +3,7 @@
 JavaScript is the most flexible, highly sought after programming language that follows the backbone of web development. Here, in simple words, how it all started, its development, and advancement is shared with both new and experienced developers who want to enhance their web programming skills.
 
 ## What is JavaScript?
-In a nutshell, JavaScript is a lightweight, interpreted programming language that has been designed to add interactivity and dynamic behavior to the pages of a web. Where static HTML structures the content, and CSS styles it, JavaScript brings life to the world of developers and enables the production of more responsive and interactive user experiences.
+In a nutshell, JavaScript is a lightweight ("It can run on almost any device without requiring a lot of memory or processing power."), interpreted programming language ("Does not require compiling into machine language.") that has been designed to add interactivity and dynamic behavior to the pages of a web. Where static HTML structures the content, and CSS styles it, JavaScript brings life to the world of developers and enables the production of more responsive and interactive user experiences.
 
 ## Origin of JavaScript
 The importance and unbelievable growth of JavaScript can be attributed to its inception by Brendan Eich in 1995. What was once written to provide a little thrill to simple web pages has developed into a powerful programming language needed for building today's modern web applications.
