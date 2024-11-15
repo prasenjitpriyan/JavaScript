@@ -14,14 +14,14 @@ const SidebarComponent = () => {
   };
 
   return (
-    <main className="flex">
+    <section className="flex">
       {/* Toggle Button */}
       <SidebarToggleButton />
 
       {/* Sidebar */}
       <aside
         id="separator-sidebar"
-        className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-gray-50 dark:bg-gray-800"
+        className="fixed top-0 left-0 z-40 w-64 min-h-screen transition-transform -translate-x-full sm:translate-x-0 bg-extends-dark-charcoal"
         aria-label="Sidebar"
       >
         <div className="h-full px-3 py-4 overflow-y-auto">
@@ -30,16 +30,18 @@ const SidebarComponent = () => {
               <Link
                 href="/"
                 onClick={closeSidebar}
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                className="flex items-center p-2 text-extends-minion-yellow rounded-lg hover:bg-extends-minion-yellow group"
               >
-                <FaHome className="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
-                <span className="ms-3">Home</span>
+                <FaHome className="w-5 h-5 text-extends-minion-yellow transition duration-75 group-hover:text-extends-dark-charcoal" />
+                <span className="ms-3 group-hover:text-extends-dark-charcoal">
+                  Home
+                </span>
               </Link>
             </li>
           </ul>
         </div>
       </aside>
-    </main>
+    </section>
   );
 };
 
