@@ -1,4 +1,5 @@
 import { Poppins } from 'next/font/google'
+import { ThemeModeScript } from 'flowbite-react'
 import './globals.css'
 
 const poppins = Poppins({
@@ -16,6 +17,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <ThemeModeScript />
+      </head>
       <body className={`${poppins.variable}`}>
         <main>{children}</main>
       </body>
