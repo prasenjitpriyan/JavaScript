@@ -2,19 +2,19 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FaChevronDown, FaHome } from "react-icons/fa";
 import { FaSquareRootVariable } from "react-icons/fa6";
 import SidebarToggleButton from "./SidebarToggleButton";
 
 const SidebarComponent = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const pathname = usePathname(); // Get the current path
 
-  // Toggle the dropdown menu
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  // Close the sidebar
   const closeSidebar = () => {
     const sidebar = document.getElementById("separator-sidebar");
     if (sidebar) {
@@ -39,26 +39,44 @@ const SidebarComponent = () => {
             <li>
               <Link
                 href="/"
+                className={`flex items-center p-2 rounded-lg ${
+                  pathname === "/"
+                    ? "bg-extends-minion-yellow text-extends-dark-charcoal"
+                    : "text-extends-minion-yellow hover:bg-extends-minion-yellow hover:text-extends-dark-charcoal"
+                }`}
                 onClick={closeSidebar}
-                className="flex items-center p-2 text-extends-minion-yellow rounded-lg hover:bg-extends-minion-yellow group"
               >
-                <FaHome className="w-5 h-5 text-extends-minion-yellow transition duration-75 group-hover:text-extends-dark-charcoal" />
-                <span className="ms-3 group-hover:text-extends-dark-charcoal">
-                  Home
-                </span>
+                <FaHome
+                  className={`w-5 h-5 transition duration-75 ${
+                    pathname === "/"
+                      ? "text-extends-dark-charcoal"
+                      : "text-extends-minion-yellow"
+                  }`}
+                />
+                <span className="ms-3">Home</span>
               </Link>
             </li>
 
-            {/* E-commerce Dropdown */}
+            {/* Dropdown Menu */}
             <li>
               <button
                 type="button"
-                className="flex items-center w-full p-2 text-base text-extends-minion-yellow transition duration-75 rounded-lg group hover:bg-extends-minion-yellow hover:text-extends-dark-charcoal"
+                className={`flex items-center w-full p-2 text-base transition duration-75 rounded-lg group ${
+                  pathname.includes("variables")
+                    ? "bg-extends-minion-yellow text-extends-dark-charcoal"
+                    : "text-extends-minion-yellow hover:bg-extends-minion-yellow hover:text-extends-dark-charcoal"
+                }`}
                 aria-controls="dropdown-example"
                 aria-expanded={isDropdownOpen}
                 onClick={toggleDropdown}
               >
-                <FaSquareRootVariable className="flex-shrink-0 w-5 h-5 text-extends-minion-yellow transition duration-75 group-hover:text-extends-dark-charcoal" />
+                <FaSquareRootVariable
+                  className={`flex-shrink-0 w-5 h-5 transition duration-75 ${
+                    pathname.includes("variables")
+                      ? "text-extends-dark-charcoal"
+                      : "text-extends-minion-yellow"
+                  }`}
+                />
                 <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
                   All About Variables
                 </span>
@@ -75,8 +93,12 @@ const SidebarComponent = () => {
                 <li>
                   <Link
                     href="/products"
+                    className={`flex items-center w-full p-2 pl-11 rounded-lg ${
+                      pathname === "/products"
+                        ? "bg-extends-minion-yellow text-extends-dark-charcoal"
+                        : "text-extends-minion-yellow hover:bg-extends-minion-yellow hover:text-extends-dark-charcoal"
+                    }`}
                     onClick={closeSidebar}
-                    className="flex items-center w-full p-2 text-extends-minion-yellow transition duration-75 rounded-lg pl-11 group hover:bg-extends-minion-yellow hover:text-extends-dark-charcoal"
                   >
                     Variable Declarations
                   </Link>
@@ -84,8 +106,12 @@ const SidebarComponent = () => {
                 <li>
                   <Link
                     href="/billing"
+                    className={`flex items-center w-full p-2 pl-11 rounded-lg ${
+                      pathname === "/billing"
+                        ? "bg-extends-minion-yellow text-extends-dark-charcoal"
+                        : "text-extends-minion-yellow hover:bg-extends-minion-yellow hover:text-extends-dark-charcoal"
+                    }`}
                     onClick={closeSidebar}
-                    className="flex items-center w-full p-2 text-extends-minion-yellow transition duration-75 rounded-lg pl-11 group hover:bg-extends-minion-yellow hover:text-extends-dark-charcoal"
                   >
                     Hoisting
                   </Link>
@@ -93,15 +119,25 @@ const SidebarComponent = () => {
                 <li>
                   <Link
                     href="/invoice"
+                    className={`flex items-center w-full p-2 pl-11 rounded-lg ${
+                      pathname === "/invoice"
+                        ? "bg-extends-minion-yellow text-extends-dark-charcoal"
+                        : "text-extends-minion-yellow hover:bg-extends-minion-yellow hover:text-extends-dark-charcoal"
+                    }`}
                     onClick={closeSidebar}
-                    className="flex items-center w-full p-2 text-extends-minion-yellow transition duration-75 rounded-lg pl-11 group hover:bg-extends-minion-yellow hover:text-extends-dark-charcoal"
                   >
                     Variable Naming Rules
                   </Link>
+                </li>
+                <li>
                   <Link
                     href="/invoice"
+                    className={`flex items-center w-full p-2 pl-11 rounded-lg ${
+                      pathname === "/invoice"
+                        ? "bg-extends-minion-yellow text-extends-dark-charcoal"
+                        : "text-extends-minion-yellow hover:bg-extends-minion-yellow hover:text-extends-dark-charcoal"
+                    }`}
                     onClick={closeSidebar}
-                    className="flex items-center w-full p-2 text-extends-minion-yellow transition duration-75 rounded-lg pl-11 group hover:bg-extends-minion-yellow hover:text-extends-dark-charcoal"
                   >
                     Variable Scopes
                   </Link>
