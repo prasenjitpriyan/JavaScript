@@ -1,21 +1,21 @@
-"use client";
+'use client'
 
-import React, { useState } from "react";
-import { FaChevronDown } from "react-icons/fa";
-import SidebarItem from "./SidebarItem";
+import React, { useState } from 'react'
+import { FaChevronDown } from 'react-icons/fa'
+import SidebarItem from './SidebarItem'
 
 const SidebarDropdown = ({
   label,
   icon: Icon,
   items,
   pathname,
-  closeSidebar,
+  closeSidebar
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   const toggleDropdown = () => {
-    setIsOpen((prev) => !prev);
-  };
+    setIsOpen((prev) => !prev)
+  }
 
   return (
     <li>
@@ -23,18 +23,18 @@ const SidebarDropdown = ({
         type="button"
         className={`flex w-full items-center rounded-lg p-2 text-base transition duration-75 ${
           items.some((item) => pathname.includes(item.href))
-            ? "bg-minion-yellow text-dark-charcoal"
-            : "text-minion-yellow hover:bg-minion-yellow hover:text-dark-charcoal"
+            ? 'bg-minion-yellow text-dark-charcoal'
+            : 'text-minion-yellow hover:bg-minion-yellow hover:text-dark-charcoal'
         }`}
         onClick={toggleDropdown}
       >
-        {Icon && <Icon className="h-5 w-5" />}
+        {Icon && <Icon className="size-5" />}
         <span className="ms-3 flex-1 whitespace-nowrap text-left">{label}</span>
         <FaChevronDown
-          className={`h-3 w-3 transition-transform ${isOpen ? "rotate-180" : ""}`}
+          className={`size-3 transition-transform ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>
-      <ul className={`${isOpen ? "block" : "hidden"} space-y-2 py-2`}>
+      <ul className={`${isOpen ? 'block' : 'hidden'} space-y-2 py-2`}>
         {items.map((item) => (
           <SidebarItem
             key={item.href}
@@ -46,7 +46,7 @@ const SidebarDropdown = ({
         ))}
       </ul>
     </li>
-  );
-};
+  )
+}
 
-export default SidebarDropdown;
+export default SidebarDropdown

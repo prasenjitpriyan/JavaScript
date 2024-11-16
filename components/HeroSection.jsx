@@ -1,12 +1,12 @@
-"use client";
+'use client'
 
-import React from "react";
-import { motion } from "framer-motion";
-import Link from "next/link";
+import React from 'react'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 const HeroSection = () => {
   return (
-    <div className="bg-dark-charcoal relative flex min-h-[calc(100vh-2rem)] items-center justify-center rounded-md p-4 px-6 text-center md:px-12">
+    <div className="relative flex items-center justify-center min-h-[calc(100vh-2rem)] bg-dark-charcoal rounded-md p-4 px-6 text-center md:px-12">
       {/* Hero Content */}
       <div className="max-w-3xl">
         {/* Title */}
@@ -44,14 +44,14 @@ const HeroSection = () => {
           </Link>
           <Link
             href="/learning"
-            className="border-minion-yellow hover:bg-minion-yellow hover:text-dark-charcoal rounded-md border px-6 py-3 text-lg font-medium text-gray-300 transition duration-300"
+            className="border minion-yellow text-gray-300 hover:bg-minion-yellow hover:text-dark-charcoal rounded-md px-6 py-3 text-lg font-medium transition duration-300"
           >
             Start Learning
           </Link>
         </motion.div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default HeroSection;
+export default HeroSection

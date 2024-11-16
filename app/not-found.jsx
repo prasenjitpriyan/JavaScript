@@ -1,10 +1,10 @@
-import Link from "next/link";
-import React from "react";
+import Link from 'next/link'
+import React from 'react'
 
 const NotFoundPage = () => {
   return (
-    <div className="bg-minion-yellow text-dark-charcoal min-h-screen rounded p-4 sm:rounded-none">
-      <div className="bg-dark-charcoal relative flex min-h-[calc(100vh-2rem)] min-w-full items-center justify-center rounded-md px-6 text-center md:px-12">
+    <div className="min-h-screen p-4 bg-minion-yellow text-dark-charcoal rounded sm:rounded-none">
+      <div className="relative flex items-center justify-center min-h-[calc(100vh-2rem)] min-w-full px-6 text-center bg-dark-charcoal md:px-12 rounded-md">
         <div className="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
           <div className="mx-auto max-w-screen-sm text-center">
             <h1 className="text-minion-yellow mb-4 text-7xl font-extrabold tracking-tight lg:text-9xl">
@@ -19,7 +19,7 @@ const NotFoundPage = () => {
             </p>
             <Link
               href="/"
-              className="hover:bg-minion-yellow hover:text-dark-charcoal focus:ring-minion-yellow my-4 inline-flex items-center justify-center rounded-lg bg-black px-5 py-2.5 text-sm font-medium text-white focus:ring-4"
+              className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-white bg-black rounded-lg hover:bg-minion-yellow hover:text-dark-charcoal focus:ring-4 focus:ring-minion-yellow my-4"
             >
               Back to Homepage
             </Link>
@@ -27,7 +27,7 @@ const NotFoundPage = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NotFoundPage;
+export default NotFoundPage

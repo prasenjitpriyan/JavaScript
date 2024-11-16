@@ -1,30 +1,30 @@
-"use client";
+'use client'
 
-import React from "react";
-import SidebarToggleButton from "./SidebarToggleButton";
-import SidebarItem from "./SidebarItem";
-import SidebarDropdown from "./SidebarDropdown";
-import { usePathname } from "next/navigation";
-import { FaHome } from "react-icons/fa";
-import { BiLogoJavascript } from "react-icons/bi";
-import { FaSquareRootVariable } from "react-icons/fa6";
+import React from 'react'
+import SidebarToggleButton from './SidebarToggleButton'
+import SidebarItem from './SidebarItem'
+import SidebarDropdown from './SidebarDropdown'
+import { usePathname } from 'next/navigation'
+import { FaHome } from 'react-icons/fa'
+import { BiLogoJavascript } from 'react-icons/bi'
+import { FaSquareRootVariable } from 'react-icons/fa6'
 
 const SidebarComponent = () => {
-  const pathname = usePathname();
+  const pathname = usePathname()
 
   const closeSidebar = () => {
-    const sidebar = document.getElementById("separator-sidebar");
+    const sidebar = document.getElementById('separator-sidebar')
     if (sidebar) {
-      sidebar.classList.add("-translate-x-full");
+      sidebar.classList.add('-translate-x-full')
     }
-  };
+  }
 
   return (
     <section className="flex">
       <SidebarToggleButton />
       <aside
         id="separator-sidebar"
-        className="bg-dark-charcoal fixed left-0 top-0 z-40 min-h-screen w-64 -translate-x-full transition-transform sm:translate-x-0"
+        className="fixed left-0 top-0 z-40 w-64 min-h-screen -translate-x-full transition-transform bg-dark-charcoal sm:translate-x-0"
         aria-label="Sidebar"
       >
         <div className="h-full overflow-y-auto px-3 py-4">
@@ -34,7 +34,7 @@ const SidebarComponent = () => {
               href="/"
               label="Home"
               icon={FaHome}
-              isActive={pathname === "/"}
+              isActive={pathname === '/'}
               closeSidebar={closeSidebar}
             />
 
@@ -46,10 +46,10 @@ const SidebarComponent = () => {
               closeSidebar={closeSidebar}
               items={[
                 {
-                  href: "/introduction/variable-declarations",
-                  label: "Variable Declarations",
+                  href: '/introduction/variable-declarations',
+                  label: 'Variable Declarations'
                 },
-                { href: "/introduction/hoisting", label: "Hoisting" },
+                { href: '/introduction/hoisting', label: 'Hoisting' }
               ]}
             />
 
@@ -61,17 +61,17 @@ const SidebarComponent = () => {
               closeSidebar={closeSidebar}
               items={[
                 {
-                  href: "/variables/naming-rules",
-                  label: "Variable Naming Rules",
+                  href: '/variables/naming-rules',
+                  label: 'Variable Naming Rules'
                 },
-                { href: "/variables/scopes", label: "Variable Scopes" },
+                { href: '/variables/scopes', label: 'Variable Scopes' }
               ]}
             />
           </ul>
         </div>
       </aside>
     </section>
-  );
-};
+  )
+}
 
-export default SidebarComponent;
+export default SidebarComponent

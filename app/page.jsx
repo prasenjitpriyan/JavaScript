@@ -1,12 +1,12 @@
-import HeroSection from "@/components/HeroSection";
-import React from "react";
+import HeroSection from '@/components/HeroSection'
+import React from 'react'
 
 const HomePage = () => {
   return (
-    <div className="bg-minion-yellow text-dark-charcoal min-h-screen rounded p-4 sm:rounded-none">
+    <div className="min-h-screen p-4 bg-minion-yellow text-dark-charcoal rounded sm:rounded-none">
       <HeroSection />
     </div>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage
