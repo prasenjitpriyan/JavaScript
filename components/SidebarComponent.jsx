@@ -131,9 +131,9 @@ const SidebarComponent = () => {
                 </li>
                 <li>
                   <Link
-                    href="/invoice"
+                    href="/scope"
                     className={`flex items-center w-full p-2 pl-11 rounded-lg ${
-                      pathname === "/invoice"
+                      pathname === "/scope"
                         ? "bg-extends-minion-yellow text-extends-dark-charcoal"
                         : "text-extends-minion-yellow hover:bg-extends-minion-yellow hover:text-extends-dark-charcoal"
                     }`}
