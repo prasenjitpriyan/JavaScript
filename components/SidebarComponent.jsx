@@ -1,19 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { FaChevronDown, FaHome } from "react-icons/fa";
-import { FaSquareRootVariable } from "react-icons/fa6";
+import React from "react";
 import SidebarToggleButton from "./SidebarToggleButton";
+import SidebarItem from "./SidebarItem";
+import SidebarDropdown from "./SidebarDropdown";
+import { usePathname } from "next/navigation";
+import { FaHome } from "react-icons/fa";
+import { BiLogoJavascript } from "react-icons/bi";
+import { FaSquareRootVariable } from "react-icons/fa6";
 
 const SidebarComponent = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const pathname = usePathname(); // Get the current path
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
+  const pathname = usePathname();
 
   const closeSidebar = () => {
     const sidebar = document.getElementById("separator-sidebar");
@@ -24,10 +21,7 @@ const SidebarComponent = () => {
 
   return (
     <section className="flex">
-      {/* Toggle Button */}
       <SidebarToggleButton />
-
-      {/* Sidebar */}
       <aside
         id="separator-sidebar"
         className="fixed top-0 left-0 z-40 w-64 min-h-screen transition-transform -translate-x-full sm:translate-x-0 bg-extends-dark-charcoal"
@@ -35,115 +29,44 @@ const SidebarComponent = () => {
       >
         <div className="h-full px-3 py-4 overflow-y-auto">
           <ul className="space-y-2 font-medium">
-            {/* Home Link */}
-            <li>
-              <Link
-                href="/"
-                className={`flex items-center p-2 rounded-lg ${
-                  pathname === "/"
-                    ? "bg-extends-minion-yellow text-extends-dark-charcoal"
-                    : "text-extends-minion-yellow hover:bg-extends-minion-yellow hover:text-extends-dark-charcoal"
-                }`}
-                onClick={closeSidebar}
-              >
-                <FaHome
-                  className={`w-5 h-5 transition duration-75 ${
-                    pathname === "/"
-                      ? "text-extends-dark-charcoal"
-                      : "text-extends-minion-yellow"
-                  }`}
-                />
-                <span className="ms-3">Home</span>
-              </Link>
-            </li>
+            {/* Static Sidebar Items */}
+            <SidebarItem
+              href="/"
+              label="Home"
+              icon={FaHome}
+              isActive={pathname === "/"}
+              closeSidebar={closeSidebar}
+            />
 
-            {/* Dropdown Menu */}
-            <li>
-              <button
-                type="button"
-                className={`flex items-center w-full p-2 text-base transition duration-75 rounded-lg group ${
-                  pathname.includes("variables")
-                    ? "bg-extends-minion-yellow text-extends-dark-charcoal"
-                    : "text-extends-minion-yellow hover:bg-extends-minion-yellow hover:text-extends-dark-charcoal"
-                }`}
-                aria-controls="dropdown-example"
-                aria-expanded={isDropdownOpen}
-                onClick={toggleDropdown}
-              >
-                <FaSquareRootVariable
-                  className={`flex-shrink-0 w-5 h-5 transition duration-75 ${
-                    pathname.includes("variables")
-                      ? "text-extends-dark-charcoal"
-                      : "text-extends-minion-yellow"
-                  }`}
-                />
-                <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
-                  All About Variables
-                </span>
-                <FaChevronDown
-                  className={`w-3 h-3 transition-transform ${
-                    isDropdownOpen ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              <ul
-                id="dropdown-example"
-                className={`${isDropdownOpen ? "block" : "hidden"} py-2 space-y-2`}
-              >
-                <li>
-                  <Link
-                    href="/products"
-                    className={`flex items-center w-full p-2 pl-11 rounded-lg ${
-                      pathname === "/products"
-                        ? "bg-extends-minion-yellow text-extends-dark-charcoal"
-                        : "text-extends-minion-yellow hover:bg-extends-minion-yellow hover:text-extends-dark-charcoal"
-                    }`}
-                    onClick={closeSidebar}
-                  >
-                    Variable Declarations
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/billing"
-                    className={`flex items-center w-full p-2 pl-11 rounded-lg ${
-                      pathname === "/billing"
-                        ? "bg-extends-minion-yellow text-extends-dark-charcoal"
-                        : "text-extends-minion-yellow hover:bg-extends-minion-yellow hover:text-extends-dark-charcoal"
-                    }`}
-                    onClick={closeSidebar}
-                  >
-                    Hoisting
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/invoice"
-                    className={`flex items-center w-full p-2 pl-11 rounded-lg ${
-                      pathname === "/invoice"
-                        ? "bg-extends-minion-yellow text-extends-dark-charcoal"
-                        : "text-extends-minion-yellow hover:bg-extends-minion-yellow hover:text-extends-dark-charcoal"
-                    }`}
-                    onClick={closeSidebar}
-                  >
-                    Variable Naming Rules
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/scope"
-                    className={`flex items-center w-full p-2 pl-11 rounded-lg ${
-                      pathname === "/scope"
-                        ? "bg-extends-minion-yellow text-extends-dark-charcoal"
-                        : "text-extends-minion-yellow hover:bg-extends-minion-yellow hover:text-extends-dark-charcoal"
-                    }`}
-                    onClick={closeSidebar}
-                  >
-                    Variable Scopes
-                  </Link>
-                </li>
-              </ul>
-            </li>
+            {/* Dropdown for "Introduction" */}
+            <SidebarDropdown
+              label="Introduction"
+              icon={BiLogoJavascript}
+              pathname={pathname}
+              closeSidebar={closeSidebar}
+              items={[
+                {
+                  href: "/introduction/variable-declarations",
+                  label: "Variable Declarations",
+                },
+                { href: "/introduction/hoisting", label: "Hoisting" },
+              ]}
+            />
+
+            {/* Dropdown for "All About Variables" */}
+            <SidebarDropdown
+              label="All About Variables"
+              icon={FaSquareRootVariable}
+              pathname={pathname}
+              closeSidebar={closeSidebar}
+              items={[
+                {
+                  href: "/variables/naming-rules",
+                  label: "Variable Naming Rules",
+                },
+                { href: "/variables/scopes", label: "Variable Scopes" },
+              ]}
+            />
           </ul>
         </div>
       </aside>
