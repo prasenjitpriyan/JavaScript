@@ -24,10 +24,10 @@ const SidebarComponent = () => {
       <SidebarToggleButton />
       <aside
         id="separator-sidebar"
-        className="fixed top-0 left-0 z-40 w-64 min-h-screen transition-transform -translate-x-full sm:translate-x-0 bg-extends-dark-charcoal"
+        className="bg-dark-charcoal fixed left-0 top-0 z-40 min-h-screen w-64 -translate-x-full transition-transform sm:translate-x-0"
         aria-label="Sidebar"
       >
-        <div className="h-full px-3 py-4 overflow-y-auto">
+        <div className="h-full overflow-y-auto px-3 py-4">
           <ul className="space-y-2 font-medium">
             {/* Static Sidebar Items */}
             <SidebarItem

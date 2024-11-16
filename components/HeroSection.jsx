@@ -6,12 +6,12 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <div className="relative bg-extends-dark-charcoal min-h-[calc(100vh-2rem)] p-4 flex items-center justify-center text-center px-6 md:px-12 rounded-md">
+    <div className="bg-dark-charcoal relative flex min-h-[calc(100vh-2rem)] items-center justify-center rounded-md p-4 px-6 text-center md:px-12">
       {/* Hero Content */}
       <div className="max-w-3xl">
         {/* Title */}
         <motion.h1
-          className="text-4xl md:text-6xl font-bold text-extends-minion-yellow mb-6"
+          className="text-minion-yellow mb-6 text-4xl font-bold md:text-6xl"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -21,7 +21,7 @@ const HeroSection = () => {
 
         {/* Subtitle */}
         <motion.p
-          className="text-lg md:text-2xl text-gray-300 mb-8"
+          className="mb-8 text-lg text-gray-300 md:text-2xl"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -38,13 +38,13 @@ const HeroSection = () => {
         >
           <Link
             href="/notes"
-            className="px-6 py-3 rounded-md bg-extends-minion-yellow text-extends-dark-charcoal font-medium text-lg shadow-lg hover:bg-my-color-6 transition duration-300"
+            className="bg-minion-yellow text-dark-charcoal rounded-md px-6 py-3 text-lg font-medium shadow-lg transition duration-300 hover:bg-black hover:text-white"
           >
             Explore Notes
           </Link>
           <Link
             href="/learning"
-            className="px-6 py-3 rounded-md border border-extends-minion-yellow text-gray-300 font-medium text-lg hover:bg-my-color-5 hover:text-extends-minion-yellow transition duration-300"
+            className="border-minion-yellow hover:bg-minion-yellow hover:text-dark-charcoal rounded-md border px-6 py-3 text-lg font-medium text-gray-300 transition duration-300"
           >
             Start Learning
           </Link>

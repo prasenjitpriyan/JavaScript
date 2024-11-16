@@ -21,20 +21,20 @@ const SidebarDropdown = ({
     <li>
       <button
         type="button"
-        className={`flex items-center w-full p-2 text-base transition duration-75 rounded-lg ${
+        className={`flex w-full items-center rounded-lg p-2 text-base transition duration-75 ${
           items.some((item) => pathname.includes(item.href))
-            ? "bg-extends-minion-yellow text-extends-dark-charcoal"
-            : "text-extends-minion-yellow hover:bg-extends-minion-yellow hover:text-extends-dark-charcoal"
+            ? "bg-minion-yellow text-dark-charcoal"
+            : "text-minion-yellow hover:bg-minion-yellow hover:text-dark-charcoal"
         }`}
         onClick={toggleDropdown}
       >
-        {Icon && <Icon className="w-5 h-5" />}
-        <span className="flex-1 ms-3 text-left whitespace-nowrap">{label}</span>
+        {Icon && <Icon className="h-5 w-5" />}
+        <span className="ms-3 flex-1 whitespace-nowrap text-left">{label}</span>
         <FaChevronDown
-          className={`w-3 h-3 transition-transform ${isOpen ? "rotate-180" : ""}`}
+          className={`h-3 w-3 transition-transform ${isOpen ? "rotate-180" : ""}`}
         />
       </button>
-      <ul className={`${isOpen ? "block" : "hidden"} py-2 space-y-2`}>
+      <ul className={`${isOpen ? "block" : "hidden"} space-y-2 py-2`}>
         {items.map((item) => (
           <SidebarItem
             key={item.href}

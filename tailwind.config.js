@@ -10,10 +10,15 @@ module.exports = {
   ],
   darkMode: "class",
   theme: {
-    colors: {
-      extends: {
+    extend: {
+      colors: {
         "minion-yellow": "#f0db4f",
+        "soft-yellow": "#f5e06a",
+        "dark-yellow": "#d4b61b",
         "dark-charcoal": "#323330",
+        "light-charcoal": "#4e4e4e",
+        "accent-blue": "#2965f1",
+        "light-gray": "#e1e1e1",
       },
     },
   },

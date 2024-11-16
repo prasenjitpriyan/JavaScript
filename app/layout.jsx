@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${poppins.variable}`}>
         <SidebarComponent />
-        <main className="p-4 sm:p-0 sm:ml-64">{children}</main>
+        <main className="p-4 sm:ml-64 sm:p-0">{children}</main>
       </body>
     </html>
   );

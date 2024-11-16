@@ -3,7 +3,7 @@ import React from "react";
 
 const HomePage = () => {
   return (
-    <div className="min-h-svh bg-extends-minion-yellow text-extends-dark-charcoal p-4 rounded sm:rounded-none">
+    <div className="bg-minion-yellow text-dark-charcoal min-h-screen rounded p-4 sm:rounded-none">
       <HeroSection />
     </div>
   );

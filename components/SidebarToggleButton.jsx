@@ -15,10 +15,10 @@ const SidebarToggleButton = () => {
     <button
       onClick={toggleSidebar}
       type="button"
-      className="inline-flex items-center p-2 mt-2 ms-3 text-sm text-extends-minion-yellow rounded-lg sm:hidden hover:text-extends-dark-charcoal hover:bg-extends-minion-yellow focus:outline-none focus:ring-2 focus:ring-extends-dark-charcoal"
+      className="text-minion-yellow hover:text-dark-charcoal hover:bg-minion-yellow focus:ring-dark-charcoal ms-3 mt-2 inline-flex items-center rounded-lg p-2 text-sm focus:outline-none focus:ring-2 sm:hidden"
     >
       <span className="sr-only">Open sidebar</span>
-      <FaBars className="w-6 h-6" aria-hidden="true" />
+      <FaBars className="h-6 w-6" aria-hidden="true" />
     </button>
   );
 };

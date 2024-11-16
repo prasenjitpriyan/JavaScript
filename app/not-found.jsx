@@ -3,23 +3,23 @@ import React from "react";
 
 const NotFoundPage = () => {
   return (
-    <div className="min-h-svh bg-extends-minion-yellow text-extends-dark-charcoal p-4 rounded sm:rounded-none">
-      <div className="relative bg-extends-dark-charcoal min-h-[calc(100vh-2rem)] min-w-full flex items-center justify-center text-center px-6 md:px-12 rounded-md">
-        <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+    <div className="bg-minion-yellow text-dark-charcoal min-h-screen rounded p-4 sm:rounded-none">
+      <div className="bg-dark-charcoal relative flex min-h-[calc(100vh-2rem)] min-w-full items-center justify-center rounded-md px-6 text-center md:px-12">
+        <div className="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
           <div className="mx-auto max-w-screen-sm text-center">
-            <h1 className="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-extends-minion-yellow dark:text-primary-500">
+            <h1 className="text-minion-yellow mb-4 text-7xl font-extrabold tracking-tight lg:text-9xl">
               ~404~
             </h1>
-            <p className="mb-4 text-3xl tracking-tight font-bold text-black md:text-4xl">
-              Something's missing.
+            <p className="mb-4 text-3xl font-bold tracking-tight text-black md:text-4xl">
+              Something&#39;s missing.
             </p>
-            <p className="mb-4 text-lg font-light text-gray-500 dark:text-gray-400">
-              Sorry, we can't find that page. You'll find lots to explore on the
-              home page.{" "}
+            <p className="mb-4 text-lg font-light text-gray-300">
+              Sorry, we can&#39;t find that page. You&#39;ll find lots to
+              explore on the home page.
             </p>
             <Link
               href="/"
-              className="inline-flex text-white bg-black hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900 my-4"
+              className="hover:bg-minion-yellow focus:ring-minion-yellow dark:focus:ring-primary-900 hover:text-dark-charcoal my-4 inline-flex items-center justify-center rounded-lg bg-black px-5 py-2.5 text-sm font-medium text-white focus:outline-none focus:ring-4"
             >
               Back to Homepage
             </Link>
